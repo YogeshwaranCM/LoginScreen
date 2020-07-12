@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LoginScreen.View;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -8,9 +9,11 @@ namespace LoginScreen
     {
         public App()
         {
+            Device.SetFlags(new string[] { "Shapes_Experimental" });
+
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new LoginView();
         }
 
         protected override void OnStart()

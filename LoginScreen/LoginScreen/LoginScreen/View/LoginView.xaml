@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="LoginScreen.View.LoginView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:customControl="clr-namespace:LoginScreen.CustomControl"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    xmlns:viewModel="clr-namespace:LoginScreen.ViewModel"
+    BackgroundColor="{StaticResource AppBackgroundColor}"
+    mc:Ignorable="d">
+
+    <ContentPage.BindingContext>
+        <viewModel:LoginViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid BackgroundColor="Transparent">
+
+                <Path Data="M0.66904762,147.1119 C62.365466,110.34333 53.18099,153.39921 122.09762,162.5881 162.62912,167.99229 170.92876,165.97711 210.19286,143.54048 225.54807,134.76607 238.30976,123.05706 255.43095,117.35 269.95216,112.5096 281.11538,111.39762 297.09762,111.39762 323.00352,111.39762 346.205,125.68333 372.09762,125.68333 405.37894,125.68333 433.90991,109.9442 464.95476,98.302381 492.11229,88.118307 530.68156,86.573086 550.66905,62.588095 566.84865,43.172573 559.69709,27.932713&#xD;&#xA;549.47857,0.68333333 549.21088,1.8433229 549.47857,3.0642857 549.47857,4.2547619 549.47857,5.0484127 549.72955,5.882791 549.47857,6.6357143 518.24295,6.6357143 498.93309,-6.9293417 464.95476,3.0642857 436.06274,11.561938 406.62929,11.397619 375.66905,11.397619 344.89443,11.397619 316.86175,0.68333333 285.19286,0.68333333 254.08202,0.68333333 223.65727,5.4452381 193.52619,5.4452381 134.1584,5.4452381 75.397008,4.2547619 16.145238,4.2547619 -2.4409892,4.2547619&#xD;&#xA;1.8849,5.0397701 -4.0928571,30.445238 -7.2856105,44.01444 -6.4738095,56.550783 -6.4738095,70.921429 -6.4738095,96.678554 -1.8369123,121.38405 0.66904762,147.1119 z" Style="{StaticResource TopWavePathStyle}" />
+
+                <StackLayout
+                    Margin="25,0,25,16"
+                    BackgroundColor="Transparent"
+                    Spacing="16"
+                    VerticalOptions="CenterAndExpand">
+
+                    <Label Style="{StaticResource CredentialPageHeaderLabelStyle}" Text="Login" />
+
+                    <Frame Style="{StaticResource CredentialPageFrameStyle}">
+                        <StackLayout Orientation="Horizontal" Spacing="0">
+                            <customControl:BorderlessEntry
+                                Placeholder="Email ID"
+                                Style="{StaticResource CredentialPageEntryStyle}"
+                                Text="{Binding User.Name}" />
+                            <Image Source="Email.png" Style="{StaticResource CredentialPageImageIconStyle}" />
+                        </StackLayout>
+                    </Frame>
+
+                    <Frame Style="{StaticResource CredentialPageFrameStyle}">
+                        <StackLayout Orientation="Horizontal" Spacing="0">
+                            <customControl:BorderlessEntry
+                                IsPassword="True"
+                                Placeholder="Password"
+                                Style="{StaticResource CredentialPageEntryStyle}"
+                                Text="{Binding User.Password}" />
+                            <Image Source="Password.png" Style="{StaticResource CredentialPageImageIconStyle}" />
+                        </StackLayout>
+                    </Frame>
+
+                    <pancake:PancakeView Style="{StaticResource GradientButtonPancakeStyle}">
+                        <Button
+                            x:Name="loginButton"
+                            Command="{Binding LoginCommand}"
+                            Style="{StaticResource GradientButtonStyle}"
+                            Text="Login" />
+                    </pancake:PancakeView>
+                </StackLayout>
+
+                <Path
+                    Margin="-70,0,0,110"
+                    Data="m54.23249,127.16474l0,0c0,-27.3381 22.83348,-49.5 51.00001,-49.5l0,0c13.52604,0 26.49808,5.21516 36.06244,14.49821c9.56436,9.28305 14.93755,21.87357 14.93755,35.00178l0,0c0,27.33809 -22.83347,49.49999 -50.99999,49.49999l0,0c-28.16653,0 -51.00001,-22.16191 -51.00001,-49.49999zm51.00001,-49.5l0,98.99999m-51.00001,-49.49999l102,0"
+                    Fill="{StaticResource GradientButtonPrimaryColor}"
+                    HorizontalOptions="Start"
+                    VerticalOptions="EndAndExpand" />
+
+                <Grid VerticalOptions="End">
+                    <Path
+                        Margin="-60,0,-30,-20"
+                        BackgroundColor="Transparent"
+                        Data="M1.8595238,111.39762 C10.107856,75.404897 16.2136,35.172962 54.240476,16.159524 97.705294,-5.5728849 112.3955,41.105648 153.05,78.064286 204.81508,125.12345 182.19403,146.16858 266.14524,112.5881 320.25239,90.945236 336.64903,107.91476 393.52619,126.87381 441.78536,142.9602 475.66905,94.142935 475.66905,187.5881 475.66905,209.84524 361.05848,203.06429 324.47857,203.06429 262.74217,203.06429 203.4095,195.08783 142.33571,201.87381 91.641772,207.50647 50.046773,185.20714&#xD;&#xA;0.66904762,185.20714 0.66904762,150.21625 15.103368,131.79588 3.05,99.492857"
+                        Fill="{StaticResource LightOrangeColor}"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="End" />
+                    <Path
+                        Margin="-70,0,-50,-40"
+                        Aspect="Fill"
+                        BackgroundColor="Transparent"
+                        Data="M3.05,93.540476 C3.8163992,78.059212 2.7696839,70.554164 10.192857,56.635714 15.975926,45.792459 20.745926,36.264762 28.05,26.87381 38.453179,13.498294 52.597113,6.6357143 75.669048,6.6357143 107.4541,6.6357143 103.94079,20.621743 128.05,44.730952 147.74522,64.426168 161.84314,66.159524 192.33571,66.159524 218.12645,66.159524 230.99441,98.356248 257.8119,88.778571 293.81056,75.921909 295.89873,101.87381 326.85952,101.87381 350.52099,101.87381 373.93206,91.159524&#xD;&#xA;397.09762,91.159524 415.40533,91.159524 428.4119,95.921429 447.09762,95.921429 450.70789,121.19335 460.02528,138.40854 457.8119,164.96905 457.01825,164.96905 456.2246,164.96905 455.43095,164.96905 455.43095,168.9373 455.43095,172.90556 455.43095,176.87381 421.18041,176.87381 387.48024,173.30238 353.05,173.30238 304.87606,173.30238 253.04538,189.96789 205.43095,178.06429 165.52979,168.089 133.78089,179.25476 93.52619,179.25476 62.393409,179.25476&#xD;&#xA;33.546697,163.77857 1.8595238,163.77857 1.8595238,141.24893 9.3279357,112.69984 4.2404762,92.35 3.8436508,92.746825 3.4468254,93.143651 3.05,93.540476 z"
+                        Fill="{StaticResource GradientButtonSecondaryColor}"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="End" />
+                </Grid>
+
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
