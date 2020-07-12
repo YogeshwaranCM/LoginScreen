@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary
+    x:Class="LoginScreen.View.Styles"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:customControl="clr-namespace:LoginScreen.CustomControl"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    mc:Ignorable="d">
+
+    <!--  Login Page Style  -->
+
+    <Style x:Key="TopWavePathStyle" TargetType="Path">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="StartAndExpand" />
+        <Setter Property="Fill" Value="{StaticResource GradientButtonPrimaryColor}" />
+        <Setter Property="Margin" Value="0,-12,0,0" />
+    </Style>
+
+    <Style x:Key="CredentialPageHeaderLabelStyle" TargetType="Label">
+        <Setter Property="Margin" Value="0,0,0,16" />
+        <Setter Property="FontFamily" Value="LobsterRegular" />
+        <Setter Property="FontSize" Value="28" />
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="TextColor" Value="{StaticResource LoginHeaderTextColor}" />
+    </Style>
+
+    <Style x:Key="CredentialPageFrameStyle" TargetType="Frame">
+        <Setter Property="Padding" Value="10,0,10,0" />
+        <Setter Property="BackgroundColor" Value="{StaticResource FrameBackgroundColor}" />
+        <Setter Property="BorderColor" Value="{StaticResource FrameBorderColor}" />
+        <Setter Property="CornerRadius" Value="15" />
+        <Setter Property="HeightRequest" Value="40" />
+        <Setter Property="VerticalOptions" Value="Center" />
+    </Style>
+
+    <Style x:Key="CredentialPageEntryStyle" TargetType="customControl:BorderlessEntry">
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="PlaceholderColor" Value="{StaticResource PlaceHolderColor}" />
+    </Style>
+
+    <Style x:Key="CredentialPageImageIconStyle" TargetType="Image">
+        <Setter Property="HeightRequest" Value="18" />
+        <Setter Property="HorizontalOptions" Value="End" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="WidthRequest" Value="18" />
+    </Style>
+
+    <Style x:Key="GradientButtonPancakeStyle" TargetType="pancake:PancakeView">
+        <Setter Property="Margin" Value="0,16,0,0" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="BackgroundGradientAngle" Value="45" />
+        <Setter Property="BackgroundGradientEndColor" Value="{StaticResource GradientButtonSecondaryColor}" />
+        <Setter Property="BackgroundGradientStartColor" Value="{StaticResource GradientButtonPrimaryColor}" />
+        <Setter Property="CornerRadius" Value="8" />
+        <Setter Property="HasShadow" Value="True" />
+        <Setter Property="HeightRequest" Value="40" />
+        <Setter Property="Shadow" Value="{pancake:Shadow BlurRadius=10, Color='#ffc272'}" />
+    </Style>
+
+    <Style x:Key="GradientButtonStyle" TargetType="Button">
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="TextColor" Value="{StaticResource ButtonTextColor}" />
+    </Style>
+
+</ResourceDictionary>

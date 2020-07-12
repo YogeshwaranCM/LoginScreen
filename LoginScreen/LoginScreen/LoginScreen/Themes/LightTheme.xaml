@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary
+    x:Class="LoginScreen.Themes.LightTheme"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <!--  Colors  -->
+    <Color x:Key="NavigationBarColor">#fe9a06</Color>
+    <Color x:Key="NavigationBarTextColor">#FFFFFF</Color>
+    <Color x:Key="AppBackgroundColor">#FFFFFF</Color>
+    <Color x:Key="GradientButtonPrimaryColor">#fe9a06</Color>
+    <Color x:Key="GradientButtonSecondaryColor">#ffc272</Color>
+    <Color x:Key="LightOrangeColor">#ffefd9</Color>
+    <Color x:Key="LoginHeaderTextColor">#fe7c02</Color>
+    <Color x:Key="FrameBackgroundColor">White</Color>
+    <Color x:Key="FrameBorderColor">LightGray</Color>
+    <Color x:Key="PlaceHolderColor">Gray</Color>
+    <Color x:Key="ButtonTextColor">White</Color>
+
+    <Style TargetType="NavigationPage">
+        <Setter Property="BarBackgroundColor" Value="{StaticResource NavigationBarColor}" />
+        <Setter Property="BarTextColor" Value="{StaticResource NavigationBarTextColor}" />
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/LoginScreen/LoginScreen/LoginScreen/bin/Debug/netstandard2.0
+/LoginScreen/LoginScreen/LoginScreen/obj
+/LoginScreen/LoginScreen/LoginScreen.Android/bin/Debug
+/LoginScreen/LoginScreen/LoginScreen.Android/obj
+/LoginScreen/LoginScreen/LoginScreen.iOS/bin/iPhoneSimulator/Debug
+/LoginScreen/LoginScreen/LoginScreen.iOS/obj
